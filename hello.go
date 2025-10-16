@@ -7,3 +7,13 @@ func Say(name string) string {
 
 	return "Hello, " + name + "!"
 }
+
+func SayWithPrefix(prefix, name string) string {
+	if prefix == "" {
+		prefix = "Hello"
+	}
+	if name == "" {
+		name = "world"
+	}
+	return prefix + ", " + name + "!"
+}
