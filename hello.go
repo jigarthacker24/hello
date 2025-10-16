@@ -1,19 +1,30 @@
 package hello
 
-func Say(name string) string {
+func Say(name string, exited bool) string {
 	if name == "" {
 		name = "world"
 	}
 
-	return "Hello, " + name + "!"
+	greeting := "."
+	if exited {
+		greeting = "!!!"
+	}
+
+	return "Hello, " + name + greeting
 }
 
-func SayWithPrefix(prefix, name string) string {
+func SayWithPrefix(prefix, name string, exited bool) string {
 	if prefix == "" {
 		prefix = "Hello"
 	}
 	if name == "" {
 		name = "world"
 	}
-	return prefix + ", " + name + "!"
+
+	greeting := "."
+	if exited {
+		greeting = "!!!"
+	}
+
+	return prefix + ", " + name + greeting
 }
