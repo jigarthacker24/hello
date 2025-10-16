@@ -45,9 +45,7 @@ jobs:
             -   name: Generate change log from commits
                 id: changelog
                 run: | 
-                    echo "CHANGELOG<<EOF" >> $GITHUB_ENV
-                    git log -1 --pretty=format:"%h - %s (%an)" >> $GITHUB_ENV
-                    echo "EOF" >> $GITHUB_ENV
+                    echo "CHANGELOG=$(git log -1 --pretty=format:"%h - %s (%an)")" >> $GITHUB_ENV
                 
             -   name: Create GITHUB release
                 uses: softprops/action-gh-release@v2
